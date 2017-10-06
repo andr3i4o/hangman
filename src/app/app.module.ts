@@ -14,6 +14,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import {AuthService} from "./services/auth.service";
 import { Angular2TokenService } from 'angular2-token';
+import { ProfileComponent } from './profile/profile.component';
+import {AuthGuard} from "./guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { Angular2TokenService } from 'angular2-token';
     ToolbarComponent,
     AuthDialogComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { Angular2TokenService } from 'angular2-token';
     ReactiveFormsModule,
     NgbModule
   ],
-  providers: [Angular2TokenService, AuthService],
+  providers: [Angular2TokenService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [AuthDialogComponent]
 })
