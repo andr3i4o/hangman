@@ -1,5 +1,9 @@
 <form (ngSubmit)="onSignUpSubmit()" #f="ngForm">
   <div class="row">
+  	<div class="form-group col-sm-12">
+      <input id="name" type="text" required name='name' [(ngModel)]="signUpUser.name" class="form-control">
+      <label for="name">Name</label>
+    </div>
     <div class="form-group col-sm-12">
       <input id="email" type="email" required name='email' [(ngModel)]="signUpUser.email" class="form-control">
       <label for="email">Email</label>

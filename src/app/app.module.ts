@@ -8,14 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 /* *** Modules End *** */
 
 /* *** Services Start *** */
 
 import {AuthService} from './services/auth.service';
-import {CategoryService} from './services/category.service';
 import { Angular2TokenService } from 'angular2-token';
+import {CategoryService} from './services/category.service';
 
 /* *** Services End *** */
 
@@ -41,6 +42,12 @@ import {GameGuard} from './guards/game.guard';
 
 /* *** Guards end *** */
 
+/* *** Factories Start *** */
+
+import {UserFactory} from './models/userFactory';
+
+/* *** Factories Start *** */
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,9 +68,10 @@ import {GameGuard} from './guards/game.guard';
     BootstrapModalModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgHttpLoaderModule
   ],
-  providers: [Angular2TokenService, AuthService, AuthGuard, GameGuard, CategoryService, Configuration],
+  providers: [Angular2TokenService, AuthService, AuthGuard, GameGuard, CategoryService, Configuration, UserFactory],
   bootstrap: [AppComponent],
   entryComponents: [AuthDialogComponent, GameCategoryComponent]
 })
