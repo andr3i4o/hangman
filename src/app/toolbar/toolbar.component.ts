@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
-import { DialogService } from "ng2-bootstrap-modal";
-import {AuthService} from "../services/auth.service";
-import {Router} from "@angular/router";
+import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
+import { GameCategoryComponent } from '../game/game-category/game-category.component';
+import { DialogService } from 'ng2-bootstrap-modal';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,7 +13,7 @@ import {Router} from "@angular/router";
 export class ToolbarComponent implements OnInit {
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
-  constructor(private dialogService:DialogService, public authService:AuthService, private router:Router) {}
+  constructor(private dialogService: DialogService, public authService: AuthService, private router: Router) {}
 
   ngOnInit() {
   }
@@ -24,7 +25,7 @@ export class ToolbarComponent implements OnInit {
   presentAuthDialog(mode?: 'login' | 'register') {
     this.dialogService.addDialog(AuthDialogComponent, {
       mode: mode
-      }).subscribe((message)=>{
+      }).subscribe((message) => {
     });
   }
 }

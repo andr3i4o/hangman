@@ -1,0 +1,23 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title text-center">Choose a category</h2>
+      <a class="close" aria-label="Close" [routerLink]="['/']">
+        <span aria-hidden="true">&times;</span>
+      </a>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-control" [(ngModel)]="selectedCategory">
+            <option *ngFor="let c of categories" [ngValue]="c.category">{{c.category}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+    	<button class="btn btn-success" (click)="categorySelected()" [disabled]="!selectedCategory">Play game</button>
+      	<a class="btn btn-outline-dark" [routerLink]="['/']">Close</a>
+    </div>
+  </div>
+</div>

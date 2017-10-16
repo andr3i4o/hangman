@@ -1,5 +1,5 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {AuthService} from "../services/auth.service";
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit {
   onSignInSubmit(){
     this.authService.logInUser(this.signInUser).subscribe(
         res => {
-          if(res.status == 200){
+          if (res.status == 200){
             this.onFormResult.emit({signedIn: true, res});
           }
         },
