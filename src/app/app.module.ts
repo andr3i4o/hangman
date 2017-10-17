@@ -16,7 +16,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 import {AuthService} from './services/auth.service';
 import { Angular2TokenService } from 'angular2-token';
-import {CategoryService} from './services/category.service';
+import {CategoryService} from './game/game-category/category.service';
 
 /* *** Services End *** */
 
@@ -45,6 +45,7 @@ import {GameGuard} from './guards/game.guard';
 /* *** Factories Start *** */
 
 import {UserFactory} from './models/userFactory';
+import { WordComponent } from './game/word/word.component';
 
 /* *** Factories Start *** */
 
@@ -58,7 +59,8 @@ import {UserFactory} from './models/userFactory';
     RegisterFormComponent,
     ProfileComponent,
     GameComponent,
-    GameCategoryComponent
+    GameCategoryComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule,

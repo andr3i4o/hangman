@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { CategoryService } from '../services/category.service';
+import { CategoryService } from '../game/game-category/category.service';
 
 @Injectable()
 export class GameGuard implements CanActivate {

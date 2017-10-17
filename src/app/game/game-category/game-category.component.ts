@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
-import { CategoryService } from '../../services/category.service';
+import { CategoryService } from './category.service';
 import { Router } from '@angular/router';
 import { Category } from "../../models/category";
 
