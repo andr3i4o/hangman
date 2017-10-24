@@ -8,19 +8,19 @@ export class CategoryService {
 	public url: string;
 	public selectedCategory: string;
 
-  	constructor(private _configuration: Configuration, private http: HttpClient) {
-  		this.url = _configuration.Server + 'categories';
-  	}
+	constructor(private _configuration: Configuration, private http: HttpClient) {
+		this.url = _configuration.Server + 'categories';
+	}
 
-  	public getAll<T>(): Observable<T> {
-  		return this.http.get<T>(this.url);
-  	}
+	public getAll<T>(): Observable<T> {
+		return this.http.get<T>(this.url);
+	}
 
-  	setCategory(category){
-  		this.selectedCategory = category;
-  	}
+	setCategory(category){
+		this.selectedCategory = category;
+	}
 
-  	getCategory(){
-  		return this.selectedCategory;
-  	}
+	getCategory(){
+		return this.selectedCategory;
+	}
 }

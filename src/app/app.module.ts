@@ -14,9 +14,10 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 /* *** Services Start *** */
 
-import {AuthService} from './services/auth.service';
+import { AuthService } from './services/auth.service';
 import { Angular2TokenService } from 'angular2-token';
-import {CategoryService} from './game/game-category/category.service';
+import { CategoryService } from './game/game-category/category.service';
+import { WordService } from './game/word/word.service';
 
 /* *** Services End *** */
 
@@ -37,45 +38,45 @@ import { GameCategoryComponent } from './game/game-category/game-category.compon
 
 /* *** Guards start *** */
 
-import {AuthGuard} from './guards/auth.guard';
-import {GameGuard} from './guards/game.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { GameGuard } from './guards/game.guard';
 
 /* *** Guards end *** */
 
 /* *** Factories Start *** */
 
-import {UserFactory} from './models/userFactory';
+import { UserFactory } from './models/userFactory';
 import { WordComponent } from './game/word/word.component';
 
 /* *** Factories Start *** */
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ToolbarComponent,
-    AuthDialogComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
-    ProfileComponent,
-    GameComponent,
-    GameCategoryComponent,
-    WordComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    HttpModule,
-    BootstrapModalModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModule.forRoot(),
-    NgHttpLoaderModule
-  ],
-  providers: [Angular2TokenService, AuthService, AuthGuard, GameGuard, CategoryService, Configuration, UserFactory],
-  bootstrap: [AppComponent],
-  entryComponents: [AuthDialogComponent, GameCategoryComponent]
+	declarations: [
+	AppComponent,
+	HomeComponent,
+	ToolbarComponent,
+	AuthDialogComponent,
+	LoginFormComponent,
+	RegisterFormComponent,
+	ProfileComponent,
+	GameComponent,
+	GameCategoryComponent,
+	WordComponent
+	],
+	imports: [
+	BrowserModule,
+	AppRoutingModule,
+	HttpClientModule,
+	HttpModule,
+	BootstrapModalModule,
+	FormsModule,
+	ReactiveFormsModule,
+	NgbModule.forRoot(),
+	NgHttpLoaderModule
+	],
+	providers: [Angular2TokenService, AuthService, AuthGuard, GameGuard, CategoryService, Configuration, UserFactory, WordService],
+	bootstrap: [AppComponent],
+	entryComponents: [AuthDialogComponent, GameCategoryComponent]
 })
 
 export class AppModule { }

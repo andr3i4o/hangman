@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-6">
           <select class="form-control" [(ngModel)]="selectedCategory">
-            <option *ngFor="let c of categories" [ngValue]="c.category">{{c.category}}</option>
+            <option *ngFor="let c of categories" [ngValue]="c.id">{{c.category}}</option>
           </select>
         </div>
       </div>
