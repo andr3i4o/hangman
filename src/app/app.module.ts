@@ -25,6 +25,7 @@ import { WordService } from './game/word/word.service';
 
 import { AppComponent } from './app.component';
 import { Configuration } from './app.constants';
+import { StringValues } from './stringValues.constants';
 import { HomeComponent } from './home/home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
@@ -47,6 +48,8 @@ import { GameGuard } from './guards/game.guard';
 
 import { UserFactory } from './models/userFactory';
 import { WordComponent } from './game/word/word.component';
+import { KeyboardComponent } from './keyboard/keyboard.component';
+import { LetterComponent } from './letter/letter.component';
 
 /* *** Factories Start *** */
 
@@ -61,7 +64,9 @@ import { WordComponent } from './game/word/word.component';
 	ProfileComponent,
 	GameComponent,
 	GameCategoryComponent,
-	WordComponent
+	WordComponent,
+	KeyboardComponent,
+	LetterComponent
 	],
 	imports: [
 	BrowserModule,
@@ -74,7 +79,9 @@ import { WordComponent } from './game/word/word.component';
 	NgbModule.forRoot(),
 	NgHttpLoaderModule
 	],
-	providers: [Angular2TokenService, AuthService, AuthGuard, GameGuard, CategoryService, Configuration, UserFactory, WordService],
+	providers: [Angular2TokenService, AuthService, AuthGuard, GameGuard,
+				CategoryService, Configuration, StringValues, UserFactory,
+				WordService],
 	bootstrap: [AppComponent],
 	entryComponents: [AuthDialogComponent, GameCategoryComponent]
 })
